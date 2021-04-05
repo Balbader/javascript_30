@@ -8,7 +8,11 @@
 
 
     <div class="clock">
+        <div id="number-12" class=number>XII</div>
       <div class="clock-face">
+        <div id="number-3" class=number>III</div>
+        <div id="number-6" class=number>VI</div>
+        <div id="number-9" class=number>IX</div>
         <div class="hand hour-hand" id="hr"></div>
         <div class="hand min-hand" id="min"></div>
         <div class="hand second-hand" id="sec"></div>
@@ -45,6 +49,40 @@
 
     #sec {
       background: white;
+      height: 1px;
+    }
+
+    .number {
+      position: absolute;
+      margin: auto;
+      height: 1em;
+      font-size: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    #number-12 {
+      top: 9px;
+      left: 0;
+      right: 0;
+    }
+
+    #number-3 {
+      right: 9px;
+      top: 0;
+      bottom: 0;
+    }
+
+    #number-6 {
+      bottom: 9px;
+      left: 0;
+      right: 0;
+    }
+
+    #number-9 {
+      left: 9px;
+      top: 0;
+      bottom: 0;
     }
 
     .clock {
