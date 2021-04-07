@@ -34,7 +34,8 @@
       'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
-    
+
+
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     const fifteen = inventors.filter(arr => arr.year >= 1500 && arr.year < 1600);
@@ -44,6 +45,7 @@
     // 2. Give us an array of the inventors first and last names
     const fullNames = inventors.map(arr => arr.first + " " + arr.last);
     console.table(fullNames);
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
@@ -72,8 +74,14 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    const totYears = inventors.reduce((tot, arr) => {
+      return tot + (arr.passed - arr.year);
+    }, 0);
+    console.log(totYears);
 
     // 5. Sort the inventors by years lived
+    const descending = inventors.sort((a, b) => ((a.passed - a.year) > (b.passed - b.year) ? -1 : 1));
+    console.table(descending);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
