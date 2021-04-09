@@ -52,12 +52,16 @@ body {
   margin: 0;
   width: 100%;
   transition: transform 0.5s;
-  border: 1px solid red;
   flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.panel > *:first-child { transform: translateY(-100%);} /* this will put all the top row off screen */
+.panel.open-active > *:first-child { transform: translateY(0);} /* brings back top row to center of page */
+.panel > *:last-child { transform: translateY(100%);} /* this will put the bottom row off screen */
+.panel.open-active > *:last-child { transform: translateY(0);} /* brings back bottom row to center of page */
 
 .panel p {
   text-transform: uppercase;
@@ -72,4 +76,5 @@ body {
 
 .panel.open {
   font-size: 40px;
+  flex: 5;
 }
