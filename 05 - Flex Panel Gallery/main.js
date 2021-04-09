@@ -3,4 +3,9 @@ function toggleOpen() {
   this.classList.toggle('open');
 }
 
-panels.forEach(panel => paner.addEventListerner('click', toggleOpen));
+function toggleActive(e) {
+  console.log(e.propertyName);
+}
+
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
