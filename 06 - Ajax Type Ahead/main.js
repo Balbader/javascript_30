@@ -17,15 +17,18 @@ function findMatches(wordToMatch, cities){
 
 function displayMatches() {
     const matchArray = findMatches(this.value, cities);
-    //loop over the Array
+    //loop over the Array and display the list on the page
     const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
         return `
             <li>
-                <span class="name">${place.city}, ${place.state}</span>
+                <span class="name">${cityName}, ${stateName}</span>
                 <span class="population">${place.population}</span>
             </li>
         `;
-    });
+    }).join('');
     suggestions.innerHTML = html;
 }
 
