@@ -16,10 +16,16 @@ function draw(e) {
     if (!isDrawing)
         return; // stop the function from running when they are not moused down
     console.log(e);
+    /* ------ The drawing part ------ */
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.offsetX, e.offsetY); // fetch the values of the actual event happening on the canvas
+    ctx.stroke();
 }
 
 /* ----------- action to trigger the drawing ----------------- */
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false); // make sure to tell that the mouse is not drawing anymore
+
