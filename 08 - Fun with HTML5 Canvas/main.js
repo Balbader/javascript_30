@@ -13,12 +13,13 @@ let isDrawing = false; // when click on canvas, draw then let go.. the mouse wil
 let lastX = 0; // where you start the line from
 let lastY = 0; // where you end the lind
 let hue = 0; // variable to change the color of the line
+let direction = true;
+
 const draw = (e) => {
     if (!isDrawing)
         return; // stop the function from running when they are not moused down
     console.log(e);
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // setting up the color change for the line. It starts red.
-    // ctx.lineWidth = hue; // change line width based on hue value
 
     /* ------ The drawing part ------ */
     ctx.beginPath();
@@ -32,6 +33,16 @@ const draw = (e) => {
     if (hue >= 360) {
         hue = 0;
     }; // reset color to starting point: red
+
+    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+        direction = !direction;
+    };
+    
+    // flip the direction of the line size once it reaches to 100
+    if (direction)
+        ctx.lineWidth++;
+    else
+        ctx.lineWidth--;
 }
 
 /* ----------- action to trigger the drawing ----------------- */
