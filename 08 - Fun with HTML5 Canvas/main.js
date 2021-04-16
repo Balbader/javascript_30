@@ -18,6 +18,7 @@ const draw = (e) => {
         return; // stop the function from running when they are not moused down
     console.log(e);
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // setting up the color change for the line. It starts red.
+    // ctx.lineWidth = hue; // change line width based on hue value
 
     /* ------ The drawing part ------ */
     ctx.beginPath();
@@ -28,6 +29,9 @@ const draw = (e) => {
     ctx.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY];
     hue++; // increment value of color to go through the entire spectrum
+    if (hue >= 360) {
+        hue = 0;
+    }; // reset color to starting point: red
 }
 
 /* ----------- action to trigger the drawing ----------------- */
