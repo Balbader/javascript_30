@@ -18,14 +18,20 @@ function draw(e) {
     console.log(e);
     /* ------ The drawing part ------ */
     ctx.beginPath();
+    // start from 
     ctx.moveTo(lastX, lastY);
+    // go to
     ctx.lineTo(e.offsetX, e.offsetY); // fetch the values of the actual event happening on the canvas
     ctx.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
 /* ----------- action to trigger the drawing ----------------- */
+canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+});
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false); // make sure to tell that the mouse is not drawing anymore
 
