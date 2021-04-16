@@ -34,11 +34,12 @@ const draw = (e) => {
         hue = 0;
     }; // reset color to starting point: red
 
+    // flip the direction of the line size once it reaches to 100
     if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
         direction = !direction;
     };
-    
-    // flip the direction of the line size once it reaches to 100
+
+    // based on the line width increment or decrement
     if (direction)
         ctx.lineWidth++;
     else
