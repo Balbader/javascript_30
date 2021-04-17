@@ -79,7 +79,16 @@
     console.count("count A");
     console.count("count B");
     console.count("count B");
-// timing
+
+    // timing
+    // Will display the time it took to run a specific action
+    console.time('fetch data');
+    fetch('https://api.github.com/users/balbader')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetch data');
+        console.log(data);
+      });
   </script>
 </body>
 
