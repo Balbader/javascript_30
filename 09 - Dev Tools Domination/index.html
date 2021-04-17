@@ -46,6 +46,8 @@
     // .assert will check if the passed argument evaluates to true. Therefor the .assert method will only run if the argument evaluated to false.
     console.assert(1 === 1, 'false');
     console.assert(1 === 45, 'false');
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('hello'), 'Wrong!');
 
 // clearing
 
