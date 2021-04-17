@@ -59,16 +59,26 @@
     console.clear();
 
     // Grouping together
-    // The .group method allows you to group together all the properties of a given object based on the property passed as argument to it.
+    // The .group method allows you to group together all the properties of a given object based on the property passed as argument to it. Note: it will display them open.
+    // The .groupCollapsed method will display them closed
     dogs.forEach(dog => {
-      console.group(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`);
       console.log(`This is ${dog.name}`);
       console.log(`He is ${dog.age} years old.`);
       console.log(`He is ${dog.age * 7} in human age.`);
       console.groupEnd(`${dog.name}`);
     });
-// counting
 
+    // counting
+    // .count will count how many times the argument passed is used and will log the count in real time.
+    console.count("count A");
+    console.count("count B");
+    console.count("count B");
+    console.count("count A");
+    console.count("count A");
+    console.count("count A");
+    console.count("count B");
+    console.count("count B");
 // timing
   </script>
 </body>
