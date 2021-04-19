@@ -12,6 +12,7 @@ const ranges = player.querySelectorAll('.player__slider');
 const togglePlay = () => {
     const method = video.paused ? 'play' : 'pause';
     video[method]();
+    // what the code above actually means
     /*
     if (video.paused) {
         video.play();
@@ -24,12 +25,47 @@ const togglePlay = () => {
 const updateButton = () => {
     // 'this.paused' did not work
     const icon = video.paused ? '►' : '❚ ❚';
-    console.log(icon);
     toggle.textContent = icon;
+    console.log(icon);
 }
 
+const skip = () => {
+    console.log('skipping');
+    console.log(this.dataset.skip);
+    //video.currentTime += parseFloat(this.dataset.skip);
+}
+
+const handleRangeUpdate = () => {
+    video[this.name] = this.value;
+    console.log(this.value);
+}
 /* Hook up the event listeners */
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
+
 toggle.addEventListener('click', togglePlay);
+skipButtons.forEach(button => button.addEventListener('click', skip));
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
