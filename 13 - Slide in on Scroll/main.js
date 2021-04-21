@@ -17,8 +17,11 @@ const sliderImages = document.querySelectorAll('.slide-in');
 const checkSlide = (e) => {
     sliderImages.forEach(slideImage => {
         // figure out how far is the page scroll down
+        //
+        // 1/2 way through the image
         const slideInAt = (window.screenY + window.innerHeight) - slideImage.height / 2;
-        console.log(slideInAt);
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + slideImage.height;
     });
 }
 window.addEventListener('scroll', debounce(checkSlide)); // Always debounce scroll functions
