@@ -96,3 +96,6 @@ console.log('balou Object: ', balou);
 const dev = Object.assign({}, balou);
 dev.name = 'mimi';
 console.log('dev Object: ', dev);
+
+const dev2 = JSON.parse(JSON.stringify(balou)); // This will return a string
+console.log('dev2 Object: ', dev2);
