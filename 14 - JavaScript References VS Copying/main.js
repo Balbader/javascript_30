@@ -7,7 +7,7 @@ age = 200;
 console.log(age, age2);
 
 let name = 'balou';
-let name2 = 'the bear';
+let name2 = name;
 console.log(name, name2);
 name = 'mimi';
 console.log(name, name2);
@@ -16,6 +16,9 @@ console.log(name, name2);
 const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
 // and we want to make a copy of it.
+const team = players;
+
+console.log(players, team);
 
 // You might think we can just do something like this:
 
