@@ -9,7 +9,7 @@ const ranges = player.querySelectorAll('.player__slider');
 
 
 /* Build our functions */
-const togglePlay = () => {
+function togglePlay() {
     const method = video.paused ? 'play' : 'pause';
     video[method]();
     // what the code above actually means
@@ -22,20 +22,19 @@ const togglePlay = () => {
     */
 }
 
-const updateButton = () => {
+function updateButton() {
     // 'this.paused' did not work
-    const icon = video.paused ? '►' : '❚ ❚';
+    const icon = this.paused ? '►' : '❚ ❚';
     toggle.textContent = icon;
     console.log(icon);
 }
 
-const skip = () => {
+function skip () {
     console.log('skipping');
-    console.log(this.dataset.skip);
-    //video.currentTime += parseFloat(this.dataset.skip);
+    video.currentTime += parseFloat(this.dataset.skip);
 }
 
-const handleRangeUpdate = () => {
+function handleRangeUpdate() {
     video[this.name] = this.value;
     console.log(this.value);
 }
