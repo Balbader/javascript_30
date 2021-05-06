@@ -70,10 +70,28 @@ console.log('person: ', person);
 console.log('captain: ', captain);
 
 // how do we take a copy instead?
-const cap2 = Object.assign(/*new obj*/{}, /*from*/person, /*prop to copy with new value*/{number: 99}); // copy a property to the new object without and assigning it a new value without changing the original object.
+// copy a property to the new object without and assigning it a new value without updating the original object.
+const cap2 = Object.assign(/*new obj*/{}, /*from*/person, /*prop to copy with new value*/{number: 99});
 console.log('cap2: ', cap2);
 console.log('person: ', person);
 
 // We will hopefully soon see the object ...spread
 
-// Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+// Things to note - this is only 1 level deep - both for Arrays and Objects.
+// lodash has a cloneDeep method, but you should think twice before using it.
+const balou = {
+    name: 'balou',
+    age: 38,
+    social: {
+        twitter: '@balou',
+        facebook: 'balou the bear'
+    }
+}
+
+console.clear();
+console.log('balou Object: ', balou);
+
+
+const dev = Object.assign({}, balou);
+dev.name = 'mimi';
+console.log('dev Object: ', dev);
