@@ -48,6 +48,9 @@ console.log('team4: ', team4);
 team4[3] = "Hello World";
 console.log('team4: ', team4);
 
+
+const team5 = Array.from(players);
+console.log('team5: ', team5);
 // now when we update it, the original one isn't changed
 
 // The same thing goes for objects, let's say we have a person object
@@ -57,10 +60,19 @@ const person = {
     name: 'Wes Bos',
     age: 80
 };
+console.log('person: ', person);
 
 // and think we make a copy:
+const captain = person;
+captain.age = 34;
+person.number = 152;
+console.log('person: ', person);
+console.log('captain: ', captain);
 
 // how do we take a copy instead?
+const cap2 = Object.assign(/*new obj*/{}, /*from*/person, /*prop to copy with new value*/{number: 99}); // copy a property to the new object without and assigning it a new value without changing the original object.
+console.log('cap2: ', cap2);
+console.log('person: ', person);
 
 // We will hopefully soon see the object ...spread
 
