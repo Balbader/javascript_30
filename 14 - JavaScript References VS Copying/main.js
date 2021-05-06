@@ -71,6 +71,7 @@ console.log('captain: ', captain);
 
 // how do we take a copy instead?
 // copy a property to the new object without and assigning it a new value without updating the original object.
+/*NOTE: OBJECT.ASSIGN() will only update props 1 level deep.*/
 const cap2 = Object.assign(/*new obj*/{}, /*from*/person, /*prop to copy with new value*/{number: 99});
 console.log('cap2: ', cap2);
 console.log('person: ', person);
@@ -86,7 +87,7 @@ const balou = {
         twitter: '@balou',
         facebook: 'balou the bear'
     }
-}
+};
 
 console.clear();
 console.log('balou Object: ', balou);
