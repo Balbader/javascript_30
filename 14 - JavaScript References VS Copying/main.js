@@ -43,6 +43,10 @@ console.log('team3: ', team3);
 // or create a new array and concat the old one in
 
 // or use the new ES6 Spread
+const team4 = [...players];
+console.log('team4: ', team4);
+team4[3] = "Hello World";
+console.log('team4: ', team4);
 
 // now when we update it, the original one isn't changed
 
