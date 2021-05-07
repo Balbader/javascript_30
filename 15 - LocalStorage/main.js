@@ -1,5 +1,19 @@
-console.log('Hello');
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 const items = [];
 
+function addItem(e) {
+    e.preventDefault(); // Will stop the page from reloading
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+        text,
+        done: false
+    };
+
+    items.push(item);
+    this.reset();
+}
+
+
+
+addItems.addEventListener('submit', addItem);
