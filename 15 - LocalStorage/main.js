@@ -28,9 +28,15 @@ function populateList(plates = [], platesList) {
 }
 
 function toggleDone(e) {
-
+    if (!e.target.matches('input')) return; // skip unless it's an input
+    const el = e.target;
+    const index = el.dataset.index;
+    items[index].done = !items[index].done; // change the property
+    localStorage.setItem('items', JSON.stringify(items)); //store it in localeStorage
+    populateList(items, itemsList); // visually update what's on our page
 }
 
 addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
 
 populateList(items, itemsList)
