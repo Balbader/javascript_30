@@ -7,8 +7,8 @@ function highlightLink() {
     const linkCoords = this.getBoundingClientRect(); // Will print all the info about where on the page the item is located
     console.log(linkCoords);
     const coords = {
-        width = linkCoords.width,
-        height = linkCoords.height,
+        width: linkCoords.width,
+        height: linkCoords.height,
         top: linkCoords.top + window.scrollY,
         left: linkCoords.left + window.scrollX
     }
