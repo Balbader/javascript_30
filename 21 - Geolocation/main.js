@@ -1,1 +1,1 @@
-cosole.log('need to upgrade to bigsur to download xcode.... Damn you Apple');
+console.log('need to upgrade to bigsur to download xcode.... Damn you Apple');
