@@ -4,7 +4,8 @@ highlight.classList.add('highlight');
 document.body.append(highlight);
 
 function highlightLink() {
-    console.log('Highlight!!!!👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀');
+    const linkCoords = this.getBoundingClientRect(); // Will print all the info about where on the page the item is located
+    console.log(linkCoords);
 }
 
 triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
